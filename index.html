@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,17 +18,27 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .font-poppins {
-        font-family: "Poppins", system-ui;
-      }
-    </style>
+    <!-- Extend Tailwind CSS -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bike-primary": "#E76F51",
+            },
+            fontFamily: {
+              poppins: "Poppins, system-ui",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body class="font-poppins">
-    <header>
+    <header class="md:container md:mx-auto">
       <nav>
         <div class="navbar bg-base-100">
-          <div class="navbar-start">
+          <div class="flex-1">
             <div class="dropdown">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg
@@ -64,7 +74,7 @@
                 </li>
               </ul>
             </div>
-            <a class="btn btn-ghost text-xl">Biker Zone</a>
+            <a class="font-bold text-xl">Biker Zone</a>
           </div>
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -82,13 +92,13 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-end">
-            <a class="btn bg-[#E76F51] text-white">Login</a>
+          <div class="">
+            <a class="btn bg-bike-primary text-white">Login</a>
           </div>
         </div>
       </nav>
     </header>
-    <main></main>
+    <main class="md:container md:mx-auto"></main>
     <footer></footer>
   </body>
 </html>
